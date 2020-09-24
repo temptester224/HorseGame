@@ -1,0 +1,130 @@
+AddDefaultCharset WINDOWS-1251
+DirectoryIndex index.php
+RewriteEngine On
+
+ErrorDocument 400 /
+ErrorDocument 401 /
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 500 /
+#  
+
+
+
+
+# 
+RewriteRule ^index.html$ index.php [L]
+
+RewriteRule ^user$ user.php [L]
+
+# 
+RewriteRule ^rules.html(/?)+$ index.php?menu=rules [L]
+
+
+RewriteRule ^help.html(/?)+$ index.php?menu=help [L]
+
+# 
+RewriteRule ^payments(/?)+$ index.php?menu=payments [L]    
+                                  
+# 
+RewriteRule ^contacts.html(/?)+$ index.php?menu=contacts [L]
+
+# 
+RewriteRule ^news.html(/?)+$ index.php?menu=news [L]
+
+#  
+RewriteRule ^about.html(/?)+$ index.php?menu=about [L]
+
+# 
+RewriteRule ^signup.html(/?)+$ index.php?menu=signup [L]
+RewriteRule ^login.html(/?)+$ index.php?menu=login [L]
+
+#  
+RewriteRule ^recovery.html(/?)+$ index.php?menu=recovery [L]
+
+#  
+RewriteRule ^payments.html(/?)+$ index.php?menu=payments [L]
+RewriteRule ^otziv.html(/?)+$ index.php?menu=otziv [L]
+
+
+
+# 
+RewriteRule ^users/([0-9]+)(/?)+$ index.php?menu=users&page=$1 [L]
+RewriteRule ^users(/?)+$ index.php?menu=users [L]
+
+
+# 
+RewriteRule ^account.html(/?)+$ user.php?menu=account [L]
+RewriteRule ^account/knb.html(/?)+$ user.php?menu=account&sel=knb [L]
+RewriteRule ^account/shop.html(/?)+$ user.php?menu=account&sel=shop [L]
+RewriteRule ^account/farm.html(/?)+$ user.php?menu=account&sel=farm [L]
+RewriteRule ^account/balance.html(/?)+$ user.php?menu=account&sel=balance [L]
+RewriteRule ^account/withdraw.html/([0-9]+)(/?)+$ user.php?menu=account&sel=withdraw&pay_id=$1 [L]
+RewriteRule ^account/withdraw.html(/?)+$ user.php?menu=account&sel=withdraw [L]
+RewriteRule ^account/referals.html(/?)+$ user.php?menu=account&sel=referals [L]
+RewriteRule ^account/bonus.html(/?)+$ user.php?menu=account&sel=bonus [L]
+RewriteRule ^account/config.html(/?)+$ user.php?menu=account&sel=config [L]
+RewriteRule ^account/exchange.html(/?)+$ user.php?menu=account&sel=exchange [L]
+RewriteRule ^account/market.html(/?)+$ user.php?menu=account&sel=market [L]
+RewriteRule ^account/exit.html(/?)+$ user.php?menu=account&sel=exit [L]
+RewriteRule ^account/bonus2(/?)+$ user.php?menu=account&sel=bonus2 [L]
+RewriteRule ^account/bux4ik(/?)+$ user.php?menu=account&sel=bux4ik [L]
+RewriteRule ^account/chat.html(/?)+$ user.php?menu=account&sel=chat [L]
+RewriteRule ^account/rul(/?)+$ user.php?menu=account&sel=rul [L]
+RewriteRule ^chat/([a-z]+)/([a-zA-Z0-9]+)(/?)+$ index.php?menu=chat&t=$1&id=$2 [L]
+RewriteRule ^account/gono4ki(/?)+$ user.php?menu=account&sel=gono4ki [L]
+RewriteRule ^account/wheel(/?)+$ user.php?menu=account&sel=wheel [L]
+RewriteRule ^competition(/?)+$ index.php?menu=competition [L]
+RewriteRule ^competition/list(/?)+$ index.php?menu=competition&list [L]
+RewriteRule ^competition(/?)+$ user.php?menu=account&sel=payment [L]
+RewriteRule ^account/sevens(/?)+$ user.php?menu=account&sel=sevens [L]
+RewriteRule ^account/thimble(/?)+$ user.php?menu=account&sel=thimble [L]
+
+
+RewriteRule ^account/bonus-investor(/?)+$ user.php?menu=account&sel=bonus-investor [L]
+RewriteRule ^account/investor(/?)+$ user.php?menu=account&sel=investor [L]
+RewriteRule ^account/bonus11(/?)+$ user.phpmenu=account&sel=bonus11 [L]
+RewriteRule ^account/bonus12(/?)+$ user.php?menu=account&sel=bonus12 [L]
+RewriteRule ^account/bonus13(/?)+$ user.php?menu=account&sel=bonus13 [L]
+RewriteRule ^account/bonus14(/?)+$ user.php?menu=account&sel=bonus14 [L]
+
+
+
+#серфинг
+RewriteRule ^account/serfing(/?)+$ user.php?menu=account&sel=serfing [L]
+RewriteRule ^account/serfing/edit/([0-9]+)(/?)+$ user.php?menu=account&sel=serfing_add&advedit=$1 [L]
+RewriteRule ^account/serfing/delete/([0-9]+)(/?)+$ user.php?menu=account&sel=serfing&delete=$1 [L]
+RewriteRule ^account/serfing/add(/?)+$ user.php?menu=account&sel=serfing_add [L]
+RewriteRule ^account/serfing/cabinet(/?)+$ user.php?menu=account&sel=serfing_cabinet [L]
+RewriteRule ^account/serfing/moder(/?)+$ user.php?menu=account&sel=serfing_moder [L]
+RewriteRule ^account/serfing/view/([0-9]+)(/?)+$ _serfing_view.php?view=$1 [L]
+
+
+
+
+
+
+
+
+
+
+
+
+#Админские ссылки
+RewriteRule ^admin/ticket/id/([0-9]+)(/?)+$ admin/index.php?menu=ticket&id=$1 [L]
+RewriteRule ^admin/ticket(/?)+$ admin/index.php?menu=ticket [L]
+RewriteRule ^admin/stats(/?)+$ admin/index.php?menu=stats [L]
+RewriteRule ^admin/config(/?)+$ admin/index.php?menu=config [L]
+RewriteRule ^admin/contacts(/?)+$ admin/index.php?menu=contacts [L]
+RewriteRule ^admin/rules(/?)+$ admin/index.php?menu=rules [L]
+RewriteRule ^admin/about(/?)+$ admin/index.php?menu=about [L]
+RewriteRule ^admin/story_buy(/?)+$ admin/index.php?menu=story_buy [L]
+RewriteRule ^admin/story_swap(/?)+$ admin/index.php?menu=story_swap [L]
+RewriteRule ^admin/story_insert(/?)+$ admin/index.php?menu=story_insert [L]
+RewriteRule ^admin/story_sell(/?)+$ admin/index.php?menu=story_sell [L]
+RewriteRule ^admin/news(/?)+$ admin/index.php?menu=news [L]
+RewriteRule ^admin/users(/?)+$ admin/index.php?menu=users [L]
+RewriteRule ^admin/sender(/?)+$ admin/index.php?menu=sender [L]
+RewriteRule ^admin/payments(/?)+$ admin/index.php?menu=payments [L]
+RewriteRule ^admin/pin(/?)+$ admin/index.php?menu=pin [L]
+RewriteRule ^admin/exit(/?)+$ admin/index.php?menu=exit [L]
